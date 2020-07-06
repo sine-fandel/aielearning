@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/aielearning/dist'
+  publicPath: '/AIE/dist'
 }
