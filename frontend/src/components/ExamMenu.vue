@@ -32,7 +32,7 @@ export default {
       }
     },
     search () {
-      var post_url = "http://fangzx.pythonanywhere.com/api/search_examapi";
+      var post_url = "https://fangzx.pythonanywhere.com/api/search_examapi";
       var config = {  headers: {'Content-Type': 'text/xml'} };
 
       axios.post (post_url, this.exam_code, config).then (response => {

@@ -138,7 +138,7 @@ export default {
       console.log (json_str);
 
       var config = {  headers: {'Content-Type': 'application/json'} };
-      var upload_url = "http://fangzx.pythonanywhere.com/api/gen_examapi";
+      var upload_url = "https://fangzx.pythonanywhere.com/api/gen_examapi";
       axios.post (upload_url, json_str, config).then (response => {
         if (response.data.msg == "success") {
           this.$msgbox ({
