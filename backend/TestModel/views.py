@@ -4,9 +4,17 @@ from xml.etree import cElementTree as ET
 import random
 import json
 from . import models
+import hashlib
 
 def hello(request):
   return JsonResponse({'result': 200, 'msg': '连接成功'})
+
+def hash_code(s, salt='ilearning'):
+    h = hashlib.sha256()
+    s += salt
+    h.update(s.encode())
+
+    return h.hexdigest()
 
 def uploadapi (request) :
   '''

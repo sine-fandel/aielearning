@@ -19,7 +19,7 @@
       </el-form-item>
       <label id="note">———-— do not have an account ？————-</label>
       <el-form-item class="btn-signup">
-        <el-button class="signup-btn" type="danger" @click="test ()">sign up</el-button>
+        <el-button class="signup-btn" type="danger" @click="to_signup">sign up</el-button>
       </el-form-item>
     </el-form>
     <el-row>

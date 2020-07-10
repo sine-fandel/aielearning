@@ -117,6 +117,18 @@ class DjangoSession(models.Model):
         managed = False
         db_table = 'django_session'
 
+class UserTable(models.Model):
+    user_id = models.AutoField(primary_key=True)
+    email = models.CharField(max_length=256)
+    password = models.CharField (max_length=256)
+    username = models.CharField (max_length=128)
+    birthday = models.CharField (max_length=64)
+    grade = models.CharField (max_length=16)
+    identity = models.CharField (max_length=16)
+
+    class Meta:
+        # managed = False
+        db_table = 'user_table'
 
 class QuestionContent(models.Model):
     question_id = models.AutoField(primary_key=True)
