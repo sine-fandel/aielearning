@@ -119,7 +119,13 @@ def register (request) :
       if same_email :
         return JsonResponse ({'result': 200, 'msg': 'The email is existed'})
       
-      new_user = models.UserTable.create (email=email, password=hash_code (password), username=username, birthday=birthday, grade=grade, identity=identity)
+      new_user = models.UserTable.objects.create ()
+      new_user.email = email
+      new_user.password = hash_code (password)
+      new_user.username = username
+      new_user.birthday = birthday
+      new_user.grade = grade
+      new_user.identity = identity
       new_user.save ()
 
       return JsonResponse ({'result': 200, 'msg': 'success'})
