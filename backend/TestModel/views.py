@@ -130,5 +130,21 @@ def register (request) :
 
       return JsonResponse ({'result': 200, 'msg': 'success'})
     
+def login (request) :
+  '''
+  login api
+  '''
+  if request.method == 'POST' :
+    email = json.loads (request.body.decode()).get ('email')
+    password = json.loads (request.body.decode ()).get ('password')
+    user = models.UserTable.objects.filter (username=username)
+
+    if not user :
+      return JsonResponse ({'result': 200, 'msg': 'The email address is not registed yet'})
+    else :
+      if password != user[0].password :
+        return JsonResponse ({'result': 200, 'msg': 'wrong password'})
+      else :
+        return JsonResponse ({'result': 200, 'msg': 'success'})
 
 
