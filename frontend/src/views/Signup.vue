@@ -185,6 +185,7 @@ export default {
         grade: this.ruleForm.grade,
         identity: this.ruleForm.identity,
       }
+      console.log (json_data);
       axios.post (url, json_data, config).then (response => {
         if (response.data.msg == "success") {
           this.$msgbox ({
