@@ -127,6 +127,7 @@ def register (request) :
       new_user.grade = grade
       new_user.identity = identity
       new_user.save ()
+      # test
 
       return JsonResponse ({'result': 200, 'msg': 'success'})
     
