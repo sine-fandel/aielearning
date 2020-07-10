@@ -63,25 +63,25 @@ export default {
     handleCurrentChange (val) {
       this.current_page = val;
     },
-    // submit () {
-    //   this.$confirm ("Are you sure to submit this exam ?", "NOTE", {
-    //     confirmButtonText: 'Yes',
-    //     cancelButtonText: 'cancel',
-    //     type: 'warning'
-    //   }).then (() => {
-    //     this.$emit ("reset", "");
-    //     console.log (this.ans_list);
-    //     this.$message ({
-    //       type: 'success',
-    //       message: 'submit successfully !'
-    //     });
-    //   }).catch (() => {
-    //     this.$message({
-    //       type: 'info',
-    //       message: 'canceled the submit'
-    //     });
-    //   })
-    // },
+    submit () {
+      this.$confirm ("Are you sure to submit this exam ?", "NOTE", {
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'cancel',
+        type: 'warning'
+      }).then (() => {
+        this.$emit ("reset", "");
+        console.log (this.ans_list);
+        this.$message ({
+          type: 'success',
+          message: 'submit successfully !'
+        });
+      }).catch (() => {
+        this.$message({
+          type: 'info',
+          message: 'canceled the submit'
+        });
+      })
+    },
     xml_to_json () {
       // let xml = '<?xml version="1.0" encoding="utf-8"?><exam><start_time>2020-07-04T16:00:00.000Z</start_time><end_time>2020-07-04T18:00:00.000Z</end_time><exam_questions><question_content><question_title>22+2=</question_title></question_content><question_content><question_title>I have ten apple and you have six apple. What\'s the mount of the apple of us?</question_title></question_content><question_content><question_title>33 + 22=</question_title></question_content><question_content><question_title>22 * 3</question_title></question_content><question_content><question_title>2*2=</question_title><option_a>4</option_a><option_b>1</option_b><option_c>3</option_c><option_d>2</option_d></question_content><question_content><question_title>two plus four equal to ?</question_title><option_a>3</option_a><option_b>4</option_b><option_c>5</option_c><option_d>6</option_d></question_content><question_content><question_title>6*6=</question_title><option_a>22</option_a><option_b>36</option_b><option_c>12</option_c><option_d>34</option_d></question_content><question_content><question_title>1+1=</question_title><option_a>2</option_a><option_b>3</option_b><option_c>33</option_c><option_d>4</option_d></question_content></exam_question></exam>';
       let json = this.$parent.exam_json;
@@ -105,7 +105,7 @@ export default {
   position: absolute;
   width: 400px;
   top: 200px;
-  left: 250px;
+  left: 350px;
   font-size: 20px;
 }
 .ps-ans-input {

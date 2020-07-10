@@ -27,6 +27,16 @@
           placeholder="choose date">
         </el-date-picker>
       </el-form-item>
+      <el-form-item class="el-label-grade" label="grade" prop="grade">
+        <el-select v-model="ruleForm.grade" placeholder="select">
+        <el-option
+          v-for="item in ruleForm.grade_opt"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value">
+        </el-option> 
+      </el-select>
+      </el-form-item>
       <el-form-item class="el-label-identity" label="identity" prop="identity">
         <el-select v-model="ruleForm.identity" placeholder="select">
         <el-option
@@ -39,7 +49,7 @@
       </el-form-item>
       <!-- button -->
       <el-form-item class="btn-login">
-        <el-button type="success" @click="log_in ()">Sign up</el-button>
+        <el-button type="success" @click="sign_up ()">Sign up</el-button>
       </el-form-item>
     </el-form>
     <label id="note">Already have an account ? <el-link type="primary" href="/login">login</el-link></label>
@@ -93,6 +103,16 @@ export default {
         pwd: '',
         cpwd: '',
         username: '',
+        grade_opt: [{
+          value: "1",
+          label: "first year"
+        }, {
+          value: "2",
+          label: "second year"
+        }, {
+          value: "3",
+          label: "third year"
+        }],
         options: [{
           value: "op1",
           label: "Teacher"
@@ -103,6 +123,7 @@ export default {
           value: "op3",
           label: "Parent"
         }],
+        grade: '',
         identity: '',
         date: ''
       },
@@ -124,6 +145,9 @@ export default {
           ],
           date: [
             { required: true, message: "birthday cannot be empty", trigger: "blur" }
+          ],
+          grade: [
+            { required: true, message: "grade cannot be empty", trigger: "blur" }
           ],
           identity: [
             { required: true, message: "please choose your identity", trigger: "blur" }
@@ -148,6 +172,9 @@ export default {
     to_home () {
       this.$router.push ('/')
     },
+    sign_up () {
+
+    }
   },
   components: {
     // Footer
