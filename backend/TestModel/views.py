@@ -94,7 +94,13 @@ def search_examapi (request) :
 
     return JsonResponse({'result': 200, 'msg': 'success', 'exam_content': exam_content})
 
-
-
+def register (request) :
+  '''
+  register api
+  '''
+  if request.method == "POST" :
+    grade = json.loads (request.body.decode()).get ('grade')
+    print (grade)
+    return JsonResponse ({'result': 200, 'msg': 'success'})
 
 
