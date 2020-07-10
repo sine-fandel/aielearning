@@ -137,7 +137,7 @@ def login (request) :
   if request.method == 'POST' :
     email = json.loads (request.body.decode()).get ('email')
     password = json.loads (request.body.decode ()).get ('password')
-    user = models.UserTable.objects.filter (username=username)
+    user = models.UserTable.objects.filter (email=email)
 
     if not user :
       return JsonResponse ({'result': 200, 'msg': 'The email address is not registed yet'})
