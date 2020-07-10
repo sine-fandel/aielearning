@@ -15,7 +15,7 @@
       </el-form-item>
     <!-- button -->
       <el-form-item class="btn-login">
-        <el-button class="login-btn" type="primary" @click="log_in (ruleForm)">login</el-button>
+        <el-button class="login-btn" type="primary" @click="test ()">login</el-button>
       </el-form-item>
       <label id="note">———-— do not have an account ？————-</label>
       <el-form-item class="btn-signup">
