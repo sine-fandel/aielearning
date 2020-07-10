@@ -9,8 +9,9 @@ export default new Vuex.Store({
     username: ''
   },
   mutations: {
-    increment (state) {
-      state.count++
+    setUserStatus (state, user) {
+      state.isLogin = true;
+      state.username = user;
     }
   },
   actions: {
