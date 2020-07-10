@@ -145,6 +145,7 @@ def login (request) :
       if hash_code (password) != user[0].password :
         return JsonResponse ({'result': 200, 'msg': 'wrong password'})
       else :
-        return JsonResponse ({'result': 200, 'msg': 'success'})
+        username = user[0].username
+        return JsonResponse ({'result': 200, 'msg': 'success', 'username': username})
 
 

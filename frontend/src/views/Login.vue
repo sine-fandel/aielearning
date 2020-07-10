@@ -58,25 +58,6 @@ export default {
     }
   },  
   methods: {
-    log_in (formName) {
-      if (formName.name == '' || formName.pwd == '') {
-        this.$message ({
-          message: "email and password can not be empty",
-          type: "error"
-        })
-      }
-      else {
-        if (formName.name == '358746595@qq.com' && formName.pwd == 'hedyfattoo') {
-          this.$router.push ('/upload')
-        }
-        else {
-          this.$message ({
-            message: "wrong email or password",
-            type: "error"
-          })
-        }
-      }
-    },
     to_home () {
       this.$router.push ('/')
     },
@@ -88,15 +69,14 @@ export default {
       let url = "https://fangzx.pythonanywhere.com/api/login";
       let json_data = {
         email: this.ruleForm.name,
-        password: this.ruleForm.password
+        password: this.ruleForm.pwd
       }
       axios.post (url, json_data, config).then (response => {
         if (response.data.msg == "success") {
-          this.$msgbox ({
-            title: 'success',
-            message: "sign up successfully"
-          })
-          this.$router.push ('/login')
+          sessionStorage.setItem ("username", response.data.username);
+          this.$store.commit ("setUserStatus", response.data.username);
+          console.log (this.$store.state.username);
+          this.$router.push ('/');
         }
         else {
           this.$msgbox ({
