@@ -115,13 +115,13 @@ export default {
           label: "third year"
         }],
         options: [{
-          value: "op1",
+          value: "teacher",
           label: "Teacher"
         }, {
-          value: "op2",
+          value: "student",
           label: "Student"
         }, {
-          value: "op3",
+          value: "parent",
           label: "Parent"
         }],
         grade: '',
@@ -181,7 +181,7 @@ export default {
         password: this.ruleForm.pwd,
         password2: this.ruleForm.cpwd,
         username: this.ruleForm.username,
-        birthday: this.ruleForm.birthday,
+        birthday: this.ruleForm.date,
         grade: this.ruleForm.grade,
         identity: this.ruleForm.identity,
       }
@@ -192,6 +192,7 @@ export default {
             title: 'success',
             message: "sign up successfully"
           })
+          this.$router.push ('/login')
         }
         else {
           this.$msgbox ({

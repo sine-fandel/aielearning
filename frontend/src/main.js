@@ -5,7 +5,9 @@ import store from './store'
 import './plugins/element.js'
 import x2js from 'x2js'
 // import axios from "axios"
+import Vuex from 'vuex'
 
+Vue.use(Vuex);
 
 
 // Vue.prototype.$axios = axios;
@@ -15,7 +17,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
-  store,
+  store: store,
   // axios,
   render: h => h(App)
 }).$mount('#app')

@@ -84,16 +84,32 @@ export default {
       this.$router.push ('/signup')
     },
     test () {
-      axios.get ("https://fangzx.pythonanywhere.com/register/helloApi").then (response => {
-        console.log ("success!!");
-        console.log (response);
+      var config = {  headers: {'Content-Type': 'application/json'} };
+      let url = "https://fangzx.pythonanywhere.com/api/login";
+      let json_data = {
+        email: this.ruleForm.name,
+        password: this.ruleForm.password
+      }
+      axios.post (url, json_data, config).then (response => {
+        if (response.data.msg == "success") {
+          this.$msgbox ({
+            title: 'success',
+            message: "sign up successfully"
+          })
+          this.$router.push ('/login')
+        }
+        else {
+          this.$msgbox ({
+            title: 'wrong',
+            message: response.data.msg
+          })
+        }
       }).catch (error => {
         console.log (error);
-        alert ("something get wrong");
+        alert (error);
       })
-      console.log ("test!!")
     }
-  },
+    },
   components: {
     // Footer,
   }
