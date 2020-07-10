@@ -176,24 +176,31 @@ export default {
     sign_up () {
       var config = {  headers: {'Content-Type': 'application/json'} };
       let url = "https://fangzx.pythonanywhere.com/api/register";
-      json_data = {
+      let json_data = {
         email: this.ruleForm.name,
         password: this.ruleForm.pwd,
+        password2: this.ruleForm.cpwd,
         username: this.ruleForm.username,
         birthday: this.ruleForm.birthday,
         grade: this.ruleForm.grade,
         identity: this.ruleForm.identity,
       }
-      axios.post (upload_url, json_data, config).then (response => {
+      axios.post (url, json_data, config).then (response => {
         if (response.data.msg == "success") {
           this.$msgbox ({
             title: 'success',
             message: "sign up successfully"
           })
         }
+        else {
+          this.$msgbox ({
+            title: 'wrong',
+            message: response.data.msg
+          })
+        }
       }).catch (error => {
         console.log (error);
-        alert (response.data.msg);
+        alert (error);
       })
     }
   },

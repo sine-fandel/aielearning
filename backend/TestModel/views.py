@@ -92,15 +92,43 @@ def search_examapi (request) :
     exam_content = models.ExamTable.objects.filter (exam_code = req)[0].exam_content
     print (exam_content)
 
-    return JsonResponse({'result': 200, 'msg': 'success', 'exam_content': exam_content})
+    return JsonResponse ({'result': 200, 'msg': 'success', 'exam_content': exam_content})
 
 def register (request) :
   '''
   register api
   '''
   if request.method == "POST" :
-    grade = json.loads (request.body.decode()).get ('grade')
-    print (grade)
-    return JsonResponse ({'result': 200, 'msg': 'success'})
+    email = json.loads (request.body.decode()).get ('email')
+    password = json.loads (request.body.decode()).get ('password')
+    password2 = json.loads (request.body.decode()).get ('password2')
+    username = json.loads (request.body.decode()).get ('username')
+    birthday = json.loads (request.body.decode()).get ('birthday')
+    grade =json.loads (request.body.decode()).get ('grade')
+    identity = json.loads (request.body.decode()).get ('identity')
+
+    if password != password2 :
+      return JsonResponse ({'result': 200, 'msg': 'The password inputed two times is not the same'})
+
+    else :
+      same_username = models.UserTable.objects.filter (username=username)
+      if same_username :
+        return JsonResponse ({'result': 200, 'msg': 'The username is existed'})
+
+      same_email = models.UserTable.objects.filter (email=email)
+      if same_email :
+        return JsonResponse ({'result': 200, 'msg': 'The email is existed'})
+      
+      new_user = models.UserTable.create ()
+      new_user.email = email
+      new_user.password = hash_code (password)
+      new_user.username = username
+      new_user.birthday = birthday
+      new_user.grade = grade
+      new_user.identity = identity
+      new_user.save ()
+
+      return JsonResponse ({'result': 200, 'msg': 'success'})
+    
 
 
