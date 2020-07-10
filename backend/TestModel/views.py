@@ -142,7 +142,7 @@ def login (request) :
     if not user :
       return JsonResponse ({'result': 200, 'msg': 'The email address is not registed yet'})
     else :
-      if password != user[0].password :
+      if hash_code (password) != user[0].password :
         return JsonResponse ({'result': 200, 'msg': 'wrong password'})
       else :
         return JsonResponse ({'result': 200, 'msg': 'success'})
