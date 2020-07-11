@@ -15,8 +15,25 @@ Vue.prototype.$x2js = new x2js()
 
 Vue.config.productionTip = false
 
+router.beforeEach ((to, from, next) => {
+  if (to.meta.requireLogin) {
+    if (localStorage.getItem ('islogin')) {
+      next ();
+    }
+    else {
+      next ({
+        path: '/login',
+        query: {redirect: to.fullPath},
+      });
+    }
+  }
+  else {
+    next ();
+  }
+})
+
 new Vue({
-  router,
+  router: router,
   store: store,
   // axios,
   render: h => h(App)
