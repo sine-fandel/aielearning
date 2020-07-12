@@ -4,12 +4,12 @@
   <div>{{ left_time }} minutes left</div>
   <span class="question-title">{{ this.exam_content[current_page - 1].question_title }}</span>
   <el-input 
-    v-if="this.question_len[current_page - 1].length === 1"
+    v-if="this.question_len[current_page - 1].length === 3"
     type="textarea"
     class="ps-ans-input"
     v-model="ans_list[current_page - 1]">
   </el-input>
-  <div v-if="this.question_len[current_page - 1].length === 5" class="mcq-ans-input">
+  <div v-if="this.question_len[current_page - 1].length === 7" class="mcq-ans-input">
     <el-radio v-model="ans_list[current_page - 1]" label="A" border>A.{{ this.exam_content[current_page - 1].option_a }}</el-radio>
     <el-radio v-model="ans_list[current_page - 1]" label="B" border>B.{{ this.exam_content[current_page - 1].option_b }}</el-radio>
     <el-radio v-model="ans_list[current_page - 1]" label="C" border>C.{{ this.exam_content[current_page - 1].option_c }}</el-radio>
@@ -94,7 +94,7 @@ export default {
         this.exam_content[i] = exam['exam_questions']['question_content'][i];
         this.question_len[i] = Object.keys (this.exam_content[i]);
       }
-      // console.log (this.exam_content);
+
     }
   }
 }

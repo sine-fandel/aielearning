@@ -117,11 +117,11 @@ export default {
           label: "third grade"
       }],
       key_knowledge: [{
-        value: "Four Arithmetic Operations",
-        label: "Four Arithmetic Operations"
+        value: "add and subtract",
+        label: "add and subtract"
       }, {
-        value: "problem of geometry",
-        label: "problem of geometry"
+        value: "multiply and divide",
+        label: "multiply and divide"
       }],
       options: [{
         value: "MCQ",

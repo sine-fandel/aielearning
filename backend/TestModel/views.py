@@ -47,7 +47,7 @@ def gen_examapi (request) :
   generate examination API
   '''
   grade = json.loads (request.body.decode()).get ('grade')
-  key_knowledge = json.loads (request.body.decode()).get ('key_knowledge')
+  # key_knowledge = json.loads (request.body.decode()).get ('key_knowledge')
   difficulty = json.loads (request.body.decode()).get ('difficulty')
   time = json.loads (request.body.decode()).get ('date')
   types = json.loads (request.body.decode()).get ('types')
@@ -57,7 +57,7 @@ def gen_examapi (request) :
   id_list = []
   questions = ''
   for index in range (0, len (types)) :
-    question_info = list (models.QuestionInfo.objects.filter (difficulty=difficulty, type=types[index], key_knowledge=key_knowledge[0]))
+    question_info = list (models.QuestionInfo.objects.filter (difficulty=difficulty, type=types[index]))
     info_list = random.sample (question_info, types_num[index])
     for i in range (0, len (info_list)) :
         id_list.append (info_list[i].question_id)

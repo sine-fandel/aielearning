@@ -50,7 +50,7 @@ export default {
           }
           // let content_xml = response.data.exam_content;
           else {
-            console.log (exam_json);
+            // console.log (exam_json);
             this.$emit ("to_answer", "ExamAnswer");
             this.$emit ("get_exam_json", exam_json);
           }

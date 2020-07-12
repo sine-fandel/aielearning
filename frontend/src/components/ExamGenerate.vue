@@ -16,14 +16,6 @@
       :value="item.value">
     </el-option>
   </el-select>
-  <el-select class="opt-kk" v-model="kk" clearable multiple placeholder="Select key knowledge">
-    <el-option
-      v-for="item in options_kk"
-      :key="item.value"
-      :label="item.label"
-      :value="item.value">
-    </el-option>
-  </el-select>
   <div class="date-time">
     <el-date-picker
       v-model="date"
@@ -185,8 +177,8 @@ export default {
 }
 .date-time {
   position: absolute;
-  width: 330px;
-  top: 340px;
+  width: 400px;
+  top: 270px;
   left: 450px;
 }
 .num-questions {
@@ -202,20 +194,20 @@ export default {
   left: 480px;
 }
 .type-input {
-  position: relative;
-  width: 400px;
+  position: absolute;
+  width: 330px;
   top: 340px;
-  left: 400px;
+  left: 450px;
 }
 
 .add-btn {
   position: absolute;
-  top: 430px;
+  top: 340px;
   left: 800px;
 }
 .del-btn {
   position: absolute;
-  top: 430px;
+  top: 340px;
   left: 850px;
 }
 .submit-btn {
