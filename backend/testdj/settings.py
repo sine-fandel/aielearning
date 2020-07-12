@@ -102,6 +102,7 @@ DATABASES = {
         'PASSWORD':'hedyfattoo',
         'HOST':'Fangzx.mysql.pythonanywhere-services.com',
         'PORT':'3306',
+
     }
 }
 
