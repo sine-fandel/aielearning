@@ -132,9 +132,7 @@ class UserTable(models.Model):
 
 class QuestionContent(models.Model):
     question_id = models.AutoField(primary_key=True)
-    question_title = models.CharField(max_length=1000)
-    correct_answer = models.CharField(max_length=1000)
-    explanation = models.CharField(max_length=20)
+    question_title = models.CharField(max_length=85533)
 
     class Meta:
         # managed = False
@@ -144,7 +142,7 @@ class QuestionContent(models.Model):
 class QuestionInfo(models.Model):
     question_id = models.AutoField(primary_key=True)
     subject = models.CharField(max_length=100)
-    year = models.CharField(max_length=10)
+    year = models.CharField(max_length=20)
     difficulty = models.CharField(max_length=100)
     key_knowledge = models.CharField(max_length=100)
     type = models.CharField(max_length=20)
@@ -158,7 +156,7 @@ class ExamTable (models.Model) :
     exam_content = models.CharField (max_length=10000)
     # year = models.CharField (max_length=100)
     exam_info = models.CharField (max_length=100)
-    exam_answer = models.CharField (max_length=10000)
+    # exam_answer = models.CharField (max_length=10000)
 
     class Meta :
         # managed = False
