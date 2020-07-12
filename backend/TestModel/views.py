@@ -73,7 +73,7 @@ def gen_examapi (request) :
   for question in question_list :
       questions = questions + question
 
-  exam_xml = '<?xml version="1.0" encoding="utf-8"?>' + '<exam>' + '<start_time>' + time[0] + '</start_time>' + '<end_time>' + time[1] + '</end_time>' + '<exam_questions>' + questions + '</exam_question>' + '</exam>'
+  exam_xml = '<?xml version="1.0" encoding="utf-8"?>' + '<exam>' + '<start_time>' + time[0] + '</start_time>' + '<end_time>' + time[1] + '</end_time>' + '<exam_questions>' + questions + '</exam_question>' + '<exam_answer>' + answer_list + '</exam_answer>' + '</exam>'
   exam_table = models.ExamTable (exam_content=exam_xml, exam_info=grade, exam_answer=answer_list)
   exam_table.save ()
 
