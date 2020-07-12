@@ -62,7 +62,7 @@ export default {
       }
     },
     postXML (subject, type, diffculty, grade, key_knowledge) {
-      var xml = '<?xml version="1.0" encoding="utf-8"?>' + '<question>' + '<question_info>' + '<subject>' + subject + '</subject>' + '<type>' + type + '</type>' + '<diffculty>' + diffculty + '</diffculty>' + '<grade>' + grade + '</grade>' + '<key_knowledge>' + key_knowledge + '</key_knowledge>' + '</question_info>' + '<question_content>' + '<question_title>' + this.ruleForm.des + '</question_title>'  + '</question_content>' + '<correct_answer>' + this.ruleForm.ans + '</correct_answer>' + '<explanation>' + this.ruleForm.note + '</explanation>' + '</question>';
+      var xml = '<?xml version="1.0" encoding="utf-8"?>' + '<question>' + '<question_info>' + '<subject>' + subject + '</subject>' + '<type>' + type + '</type>' + '<diffculty>' + diffculty + '</diffculty>' + '<grade>' + grade + '</grade>' + '<key_knowledge>' + key_knowledge + '</key_knowledge>' + '</question_info>' + '<question_content>' + '<question_title>' + this.ruleForm.des + '</question_title>'  + '<correct_answer>' + this.ruleForm.ans + '</correct_answer>' + '<explanation>' + this.ruleForm.note + '</explanation>' + '</question_content>' + '</question>';
 
       console.log (xml);
       var post_url = "https://fangzx.pythonanywhere.com/api/uploadApi";
