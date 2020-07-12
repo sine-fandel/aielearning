@@ -53,7 +53,7 @@ def gen_examapi (request) :
   types = json.loads (request.body.decode()).get ('types')
   types_num = json.loads (request.body.decode()).get ('types_num')
   question_list = []
-  answer_list = []
+  # answer_list = []
   id_list = []
   questions = ''
   for index in range (0, len (types)) :
@@ -65,7 +65,7 @@ def gen_examapi (request) :
   for index in range (0, len (id_list)) :
     question_content = list (models.QuestionContent.objects.filter (question_id=id_list[index]))
     question_list.append (question_content[0].question_title)
-    answer_list.append (question_content[0].correct_answer)
+    # answer_list.append (question_content[0].correct_answer)
 
   for question in question_list :
       questions = questions + question
