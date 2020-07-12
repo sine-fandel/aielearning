@@ -27,18 +27,15 @@ def uploadapi (request) :
     question_info = {}
     question_content = {}
     for question_child in question :
-        if question_child.tag == "correct_answer" or question_child.tag == "explanation" :
-            question_content[question_child.tag] = question_child.text
-        else :
-            for child in question_child :
-                if question_child.tag == "question_info" :
-                    question_info[child.tag] = child.text
-                else :
-                    question_content['question_title'] = ET.tostring (question_child)
-                    break
+      for child in question_child :
+          if question_child.tag == "question_info" :
+              question_info[child.tag] = child.text
+          else :
+              question_content['question_title'] = ET.tostring (question_child)
+              break
 
     print (question_content)
-    question_content = models.QuestionContent (question_title=question_content['question_title'], correct_answer=question_content['correct_answer'], explanation=question_content['explanation'])
+    question_content = models.QuestionContent (question_title=question_content['question_title'])
     question_content.save ()
     question_info = models.QuestionInfo (subject=question_info['subject'], type=question_info['type'], year=question_info['grade'], difficulty=question_info['diffculty'], key_knowledge=question_info['key_knowledge'])
     question_info.save ()
