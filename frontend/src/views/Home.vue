@@ -7,7 +7,10 @@
     </div>
     <router-view/>
     <div v-if="!this.$store.state.isLogin">Please Login</div>
-    <div v-else>Welcome {{ this.$store.state.username }}</div>
+    <div v-else>
+      Welcome {{ this.$store.state.username }}
+      <el-button @click="logout">log out</el-button>
+    </div>
   </div>
 </template>
 
@@ -36,8 +39,10 @@ export default {
       this.$router.push ('/exam');
     },
     increment () {
-      // this.$store.commit ('increment');
-      // this.count = this.$store.state.count;
+      console.log (localStorage.getItem ('username'));
+    },
+    logout () {
+      this.$store.dispatch ('logout');
     }
   },
   components: {

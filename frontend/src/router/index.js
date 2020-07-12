@@ -8,26 +8,41 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Home',
+    meta: {
+      requireLogin: true      // needed login
+    },
     component: Home
   },
   {
     path: '/login',
     name: 'Login',
+    meta: {
+      requireLogin: false      // needed login
+    },
     component: () => import ('../views/Login.vue')
   },
   {
     path: '/signup',
     name: 'Signup',
+    meta: {
+      requireLogin: false      // needed login
+    },
     component: () => import ('../views/Signup.vue')
   },
   {
     path: '/upload',
     name: 'Upload',
+    meta: {
+      requireLogin: true      // needed login
+    },
     component: () => import ('../views/Upload.vue')
   },
   {
     path: '/exam',
     name: 'Exam',
+    meta: {
+      requireLogin: true      // needed login
+    },
     component: () => import ('../views/Exam.vue')
   },
   // {

@@ -73,9 +73,10 @@ export default {
       }
       axios.post (url, json_data, config).then (response => {
         if (response.data.msg == "success") {
-          sessionStorage.setItem ("username", response.data.username);
-          this.$store.commit ("setUserStatus", response.data.username);
-          console.log (this.$store.state.username);
+          localStorage.setItem ("islogin", true);
+          localStorage.setItem ("username",  response.data.username);
+          this.$store.dispatch ("login");
+          console.log (localStorage.getItem ('username'));
           this.$router.push ('/');
         }
         else {
