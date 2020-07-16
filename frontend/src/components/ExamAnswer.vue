@@ -70,11 +70,20 @@ export default {
         type: 'warning'
       }).then (() => {
         this.$emit ("reset", "");
-        console.log (this.ans_list);
-        this.$message ({
-          type: 'success',
-          message: 'submit successfully !'
-        });
+        let count_cor = 0;
+        let wrong_list = [];
+        for (let i = 0; i < this.exam_content.length; i++) {
+          if (this.exam_content[i].correct_answer === this.ans_list[i]) {
+            count_cor ++;
+          }
+          else {
+            wrong_list.push (this.exam_content[i].question_title);
+          }
+        }
+        console.log (wrong_list);
+        console.log (this.$store.state.username);
+        alert ("Your score is " + count_cor + ' out of ' + this.exam_content.length);
+        
       }).catch (() => {
         this.$message({
           type: 'info',
@@ -94,7 +103,6 @@ export default {
         this.exam_content[i] = exam['exam_questions']['question_content'][i];
         this.question_len[i] = Object.keys (this.exam_content[i]);
       }
-
     }
   }
 }

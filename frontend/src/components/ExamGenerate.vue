@@ -177,7 +177,7 @@ export default {
 }
 .date-time {
   position: absolute;
-  width: 400px;
+  width: 330px;
   top: 270px;
   left: 450px;
 }
@@ -194,10 +194,10 @@ export default {
   left: 480px;
 }
 .type-input {
-  position: absolute;
-  width: 330px;
-  top: 340px;
-  left: 450px;
+  position: relative;
+  width: 400px;
+  top: 250px;
+  left: 400px;
 }
 
 .add-btn {

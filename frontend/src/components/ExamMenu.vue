@@ -77,7 +77,7 @@ export default {
   margin-top: 1px;
   height: 39px;
   width: 30px;
-  background-image: url("http://www.shejiye.com/uploadfile/icon/2017/0203/shejiyeiconkn52tp3dxt1.png");
+  background-image: url("../assets/search.png");
   background-size: 30px 30px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
