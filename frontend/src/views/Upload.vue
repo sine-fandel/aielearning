@@ -1,6 +1,7 @@
 <template>
 <div>
-  <div class="wrapper">
+  <NavMenu></NavMenu>
+  <div class="wrapper" style="margin-top: 60px;">
     <el-steps :active="active" align-center>
       <el-step title="Step 1" description="select subject"></el-step>
       <el-step title="Step 2" description="question information"></el-step>
@@ -83,6 +84,7 @@
 import Fileupload from "../components/Fileupload"
 import Psdescript from "../components/Psdescript"
 import Mcqdescript from "../components/Mcqdescript"
+import NavMenu from "../components/NavMenu"
 
 export default {
   name: "Upload",
@@ -195,7 +197,8 @@ export default {
     // Footer,
     Fileupload,
     Psdescript,
-    Mcqdescript
+    Mcqdescript,
+    NavMenu
   }
 }
 </script>

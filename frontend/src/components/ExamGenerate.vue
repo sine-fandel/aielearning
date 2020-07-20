@@ -202,12 +202,12 @@ export default {
 
 .add-btn {
   position: absolute;
-  top: 340px;
+  top: 360px;
   left: 800px;
 }
 .del-btn {
   position: absolute;
-  top: 340px;
+  top: 360px;
   left: 850px;
 }
 .submit-btn {

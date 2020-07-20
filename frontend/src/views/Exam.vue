@@ -1,6 +1,7 @@
 <template>
 <div>
-  <el-header>
+  <NavMenu></NavMenu>
+  <el-header style="margin-top: 50px">
     <ExamMenu v-bind:which_to_show="which_to_show" v-on:changeMenu="change ($event)" v-on:to_answer="answer ($event)" v-on:get_exam_json="get_exam_json ($event)"></ExamMenu>
   </el-header>
 
@@ -13,6 +14,7 @@
 import ExamMenu from "../components/ExamMenu"
 import ExamGenerate from "../components/ExamGenerate"
 import ExamAnswer from "../components/ExamAnswer"
+import NavMenu from '../components/NavMenu'
 
 export default {
   name: "Exam",
@@ -41,6 +43,7 @@ export default {
     ExamMenu,
     ExamGenerate,
     ExamAnswer,
+    NavMenu
   }
 }
 </script>
