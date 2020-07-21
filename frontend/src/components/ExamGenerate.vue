@@ -160,25 +160,25 @@ export default {
 .opt-grade {
   position: absolute;
   width: 400px;
-  top: 140px;
+  top: 180px;
   left: 450px;
 }
 .opt-diff {
   position: absolute;
   width: 400px;
-  top: 200px;
+  top: 240px;
   left: 450px;
 }
 .opt-kk {
   position: absolute;
   width: 400px;
-  top: 270px;
+  top: 310px;
   left: 450px;
 }
 .date-time {
   position: absolute;
   width: 330px;
-  top: 270px;
+  top: 310px;
   left: 450px;
 }
 .num-questions {
@@ -196,18 +196,18 @@ export default {
 .type-input {
   position: relative;
   width: 400px;
-  top: 250px;
+  top: 270px;
   left: 400px;
 }
 
 .add-btn {
   position: absolute;
-  top: 360px;
+  top: 380px;
   left: 800px;
 }
 .del-btn {
   position: absolute;
-  top: 360px;
+  top: 380px;
   left: 850px;
 }
 .submit-btn {

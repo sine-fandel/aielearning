@@ -1,36 +1,32 @@
 <template>
-<div>
   <div class="wrapper">
-    <div>
-      <el-button type="text" @click="to_home ()">home</el-button>
-    </div>
-    <p class="title">Login</p>
-    <!-- login form -->
-    <el-form class="login-form" :model="ruleForm" :rules="rules" ref="ruleForm" :label-position="ruleForm.labelPosition" label-width="80px">
-      <el-form-item class="el-label-name" label="email address" prop='name'>
-        <el-input v-model="ruleForm.name"></el-input>
-      </el-form-item>
-      <el-form-item class="el-label-pwd" label="password" prop="pwd">
-        <el-input v-model="ruleForm.pwd" show-password></el-input>
-      </el-form-item>
-    <!-- button -->
-      <el-form-item class="btn-login">
-        <el-button class="login-btn" type="primary" @click="test ()">login</el-button>
-      </el-form-item>
-      <label id="note">———-— do not have an account ？————-</label>
-      <el-form-item class="btn-signup">
-        <el-button class="signup-btn" type="danger" @click="to_signup">sign up</el-button>
-      </el-form-item>
-    </el-form>
-    <el-row>
-      <p style="display: inline;margin-right:20px;">or login through:</p>
-      <el-button class="wechat-btn" circle></el-button>
-      <el-button class="qq-btn" circle></el-button>
-    </el-row>
+    <el-card class="login-card">
+      <p class="title">Login</p>
+      <!-- login form -->
+      <el-form class="login-form" :model="ruleForm" :rules="rules" ref="ruleForm" :label-position="ruleForm.labelPosition" label-width="80px">
+        <el-form-item class="el-label-name" label="email address" prop='name'>
+          <el-input v-model="ruleForm.name"></el-input>
+        </el-form-item>
+        <el-form-item class="el-label-pwd" label="password" prop="pwd">
+          <el-input v-model="ruleForm.pwd" show-password></el-input>
+        </el-form-item>
+      <!-- button -->
+        <el-form-item class="btn-login">
+          <el-button class="login-btn" type="primary" @click="test ()">login</el-button>
+        </el-form-item>
+        <label id="note"> do not have an account ？</label>
+        <el-form-item class="btn-signup">
+          <el-button class="signup-btn" type="danger" @click="to_signup">sign up</el-button>
+        </el-form-item>
+      </el-form>
+      <el-row>
+        <p style="display: inline;margin-right:20px;">or login through:</p>
+        <el-button class="wechat-btn" circle></el-button>
+        <el-button class="qq-btn" circle></el-button>
+      </el-row>
+    </el-card>
+    <router-view/>
   </div>
-  <router-view/>
-  <!-- <Footer msg="COPYRIGHT©️2020"></Footer> -->
-</div>
 </template>
 
 <script>
@@ -98,11 +94,11 @@ export default {
 </script>
 
 <style lang="scss">
+
 .title {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 40px;
 }
-
 .el-input {
   width: 330px;
 }
@@ -123,6 +119,12 @@ export default {
   margin-left: 550px;
 }
 
+.login-card {
+  width: 500px;
+  position: absolute;
+  top: 130px;
+  right: 100px;
+}
 #note {
   margin-bottom: 5px;
   width: 14%;

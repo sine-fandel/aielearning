@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <router-view/>
-    <Footer msg="COPYRIGHT©️2020"></Footer>
   </div>
 </template>
 

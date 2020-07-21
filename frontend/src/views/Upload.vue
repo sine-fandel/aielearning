@@ -232,7 +232,7 @@ export default {
 .btn {
   display: block;
   width: 100%;
-  margin-top: 650px;
+  margin-top: 580px;
 }
 .btn-next {
   margin-left: 400px;
